@@ -11,4 +11,9 @@ const PetSchema = new Schema({
   timestamps: true,
 });
 
+PetSchema.methods.toJSON = function () {
+  const { name, type, owner } = this;
+  return { name, type, owner };
+};
+
 export default mongoose.model('Pet', PetSchema);
