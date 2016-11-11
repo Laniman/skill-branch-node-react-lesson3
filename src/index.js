@@ -33,12 +33,26 @@ app.post('/data', async (req, res) => {
   if (!data.pets) {
     data.pets = [];
   }
+
+  const user = await User.findOne({
+    name: data.user.name,
+  });
+  if (user) {
+    return res.status(400).send('user.name is exists');
+  }
+
   try {
     const result = await saveDataInDb(data);
     return res.json(result);
   } catch (e) {
     return res.status(500).json(e);
   }
+});
+
+app.get('/clear', async (req, res) => {
+  await User.remove({});
+  await Pet.remove({});
+  return res.send('OK');
 });
 
 app.listen(3000, () => {
