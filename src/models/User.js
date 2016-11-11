@@ -2,7 +2,10 @@ import mongoose, { Schema } from 'mongoose';
 // import _ from 'lodash';
 
 const UserSchema = new Schema({
-  name: String,
+  name: {
+    type: String,
+    required: true,
+  },
 }, {
   timestamps: true,
 });

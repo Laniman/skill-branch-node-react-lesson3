@@ -27,7 +27,18 @@ app.get('/pets', async (req, res) => {
 
 app.post('/data', async (req, res) => {
   const data = req.body;
-  return res.json(await saveDataInDb(data));
+  if (!data.user) {
+    return res.status(400).send('user required');
+  }
+  if (!data.pets) {
+    data.pets = [];
+  }
+  try {
+    const result = await saveDataInDb(data);
+    return res.json(result);
+  } catch (e) {
+    return res.status(500).json(e);
+  }
 });
 
 app.listen(3000, () => {
