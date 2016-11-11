@@ -7,6 +7,7 @@ import bodyParser from 'body-parser';
 import saveDataInDb from './saveDataInDb';
 import Pet from './models/Pet';
 import User from './models/User';
+import isAdmin from './middlewares/isAdmin';
 
 mongoose.Promise = Promise;
 mongoose.connect('mongodb://publicdb.mgbeta.ru/george-lesson3');
@@ -49,7 +50,7 @@ app.post('/data', async (req, res) => {
   }
 });
 
-app.get('/clear', async (req, res) => {
+app.get('/clear', isAdmin, async (req, res) => {
   await User.remove({});
   await Pet.remove({});
   return res.send('OK');
