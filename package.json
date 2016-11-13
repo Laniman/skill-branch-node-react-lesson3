@@ -1,18 +1,18 @@
 {
-  "name": "skill-branch-node-react-2c",
+  "name": "skill-branch-node-react-lesson3",
   "version": "0.0.1",
-  "description": "Skill-branch DEV-Intensive \"Node.js backend & React frontend\" - Task 2c: @username",
+  "description": "Skill-branch DEV-Intensive 'Node.js backend & React frontend' - Lesson 3: Express.js & MongoDB",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Laniman/skill-branch-node-react-2c.git"
+    "url": "git+https://github.com/Laniman/skill-branch-node-react-lesson3.git"
   },
   "author": "George Achkasov",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Laniman/skill-branch-node-react-2c/issues"
+    "url": "https://github.com/Laniman/skill-branch-node-react-lesson3/issues"
   },
-  "homepage": "https://github.com/Laniman/skill-branch-node-react-2c#readme",
+  "homepage": "https://github.com/Laniman/skill-branch-node-react-lesson3#readme",
   "babel": {
     "presets": [
       "latest",
